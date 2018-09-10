@@ -1,0 +1,169 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Translator",
+		"_postman_id": "1ce3f055-94a6-43f2-063f-86eb23199797",
+		"description": "API Documentation about Translator Module.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Info Module",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/translator/get/info/?apikey={yourapikey}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"translator",
+						"get",
+						"info",
+						""
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{yourapikey}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get Info Module\n---\nGet info detail about Translator Module"
+			},
+			"response": []
+		},
+		{
+			"name": "Translate",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/translator/google/translate",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{yourusername}",
+							"description": "Length 1-50 {alphanumeri,lowercase,required}",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "{yourtoken}",
+							"description": "Length 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Text",
+							"value": "Mina, Arigatou!",
+							"description": "Length 1-5000 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Show",
+							"value": "lite",
+							"description": "{original|lite} Optional field",
+							"type": "text"
+						},
+						{
+							"key": "Source",
+							"value": "",
+							"description": "Optional field",
+							"type": "text"
+						},
+						{
+							"key": "Target",
+							"value": "",
+							"description": "Optional field",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Translate\n---\nTo make a translation with Google Translate\n\nNote:\n- All user is capable to make a translation."
+			},
+			"response": []
+		},
+		{
+			"name": "Translate Public",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/translator/google/translate/public/?apikey={yourapikey}&lang=en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"translator",
+						"google",
+						"translate",
+						"public",
+						""
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{yourapikey}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Text",
+							"value": "Mina, Arigatou!",
+							"description": "Length 1-5000 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Show",
+							"value": "",
+							"description": "{original|lite} Optional field",
+							"type": "text"
+						},
+						{
+							"key": "Source",
+							"value": "",
+							"description": "Optional field",
+							"type": "text"
+						},
+						{
+							"key": "Target",
+							"value": "",
+							"description": "Optional field",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Translate Public\n---\nTo make a translation with Google Translate for public access with api keys."
+			},
+			"response": []
+		}
+	]
+}
